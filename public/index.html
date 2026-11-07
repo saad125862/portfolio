@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Md Saad Bin Sayed | Full-Stack Developer</title>
+<meta name="description" content="Full-stack developer building ERP, CRM and HR platforms with NestJS, Next.js and Flutter. Based in Dhaka, Bangladesh.">
+<style>
+:root{
+  --bg:#fafaf7; --surface:#ffffff; --text:#1c1c1a; --muted:#6a6a64; --line:#e4e3dc;
+  --accent:#2f5d50; --accent-ink:#ffffff; --chip:#eef1ec;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141614; --surface:#1c1f1c; --text:#ecebe4; --muted:#9a9b92; --line:#2d312d;
+    --accent:#8fc2b0; --accent-ink:#10201a; --chip:#242824;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141614; --surface:#1c1f1c; --text:#ecebe4; --muted:#9a9b92; --line:#2d312d;
+  --accent:#8fc2b0; --accent-ink:#10201a; --chip:#242824;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:700;text-decoration:none;letter-spacing:-.01em}
+.nav nav{display:flex;gap:20px;align-items:center}
+.nav nav a{text-decoration:none;color:var(--muted);font-size:14px}
+.nav nav a:hover{color:var(--text)}
+#theme{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:8px;padding:5px 10px;cursor:pointer;font-size:13px}
+section{padding:72px 0 8px}
+h1{font-size:clamp(34px,6vw,54px);line-height:1.1;margin:0 0 16px;letter-spacing:-.025em}
+h2{font-size:14px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 28px;font-weight:600}
+.hero{padding-top:88px}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:640px;margin:0 0 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:48px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.stat b{display:block;font-size:28px;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+.card h3{margin:0 0 4px;font-size:19px;letter-spacing:-.01em}
+.card .when{font-size:13px;color:var(--muted);margin-bottom:10px}
+.card p{margin:0 0 14px;color:var(--muted);font-size:15px}
+.card ul{margin:0 0 14px;padding-left:18px;color:var(--muted);font-size:14.5px}
+.card ul li{margin-bottom:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.chip{background:var(--chip);border-radius:999px;padding:3px 10px;font-size:12.5px}
+.actions{display:flex;gap:8px;margin-top:16px}
+.actions a{flex:1;text-align:center;padding:8px 10px;border-radius:9px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);text-decoration:none;font-size:14px;font-weight:600}
+.actions a[data-kind="app"]{background:transparent;color:var(--accent)}
+.actions a[data-kind="code"]{background:transparent;color:var(--text);border-color:var(--line)}
+.actions a:hover{filter:brightness(1.1)}
+.actions a.off{opacity:.45;pointer-events:none;background:transparent;color:var(--muted);border:1px dashed var(--line)}
+.timeline{border-left:2px solid var(--line);margin-left:6px}
+.job{position:relative;padding:0 0 28px 24px}
+.job::before{content:"";position:absolute;left:-7px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.job h3{margin:0;font-size:17px}
+.job .when{font-size:13px;color:var(--muted);margin-bottom:6px}
+.job ul{margin:6px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.skill h3{margin:0 0 10px;font-size:14px;color:var(--muted);font-weight:600}
+.pubs{display:grid;gap:12px}
+.pub{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.pub h3{margin:0 0 6px;font-size:16px;line-height:1.4}
+.pub p{margin:0;color:var(--muted);font-size:14px}
+.edu{display:grid;gap:10px}
+.edu div{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:10px}
+.edu span{color:var(--muted);font-size:14.5px}
+.contact{text-align:center;padding:72px 0}
+.contact h2{margin-bottom:12px}
+.contact p{color:var(--muted);margin:0 auto 24px;max-width:480px}
+.contact .btns{justify-content:center}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:13px;text-align:center}
+/* ---------- motion ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--accent);z-index:30}
+.hero{position:relative;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.28;background:var(--accent);animation:float 14s ease-in-out infinite alternate}
+.hero::before{width:320px;height:320px;top:-60px;right:-40px}
+.hero::after{width:240px;height:240px;bottom:10px;left:-60px;animation-duration:18s;animation-delay:-6s;opacity:.18}
+@keyframes float{to{transform:translate(-40px,50px) scale(1.15)}}
+h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .intro{opacity:0;transform:translateY(18px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:calc(var(--i)*120ms + 100ms)}
+@keyframes rise{to{opacity:1;transform:none}}
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0ms)}
+.js .reveal.in{opacity:1;transform:none}
+.card,.stat,.skill,.pub{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.card:hover,.stat:hover,.skill:hover,.pub:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:0 14px 30px -18px rgba(0,0,0,.35)}
+.js .reveal.in.card:hover,.js .reveal.in.stat:hover,.js .reveal.in.skill:hover,.js .reveal.in.pub:hover{transform:translateY(-5px);transition-delay:0ms}
+.btn{transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px -10px rgba(0,0,0,.4)}
+.btn:active,.actions a:active{transform:scale(.97)}
+.chip{transition:background .2s ease,color .2s ease}
+.card:hover .chip{background:var(--accent);color:var(--accent-ink)}
+.nav nav a{position:relative}
+.nav nav a.active{color:var(--text)}
+.nav nav a:not(#theme)::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--accent);transform:scaleX(0);transition:transform .25s ease}
+.nav nav a.active::after,.nav nav a:hover::after{transform:scaleX(1)}
+.job::before{transition:transform .3s ease}
+.job:hover::before{transform:scale(1.5)}
+.timeline{background:linear-gradient(var(--accent),var(--accent)) left top/2px 0 no-repeat;transition:background-size 1.4s ease;border-left-color:var(--line)}
+.timeline.in{background-size:2px 100%}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .reveal,.hero .intro{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}
+}
+@media (max-width:600px){.nav nav a.hide-sm{display:none}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">Saad Bin Sayed</a>
+    <nav>
+      <a class="hide-sm" href="#projects">Projects</a>
+      <a class="hide-sm" href="#experience">Experience</a>
+      <a class="hide-sm" href="#skills">Skills</a>
+      <a class="hide-sm" href="#research">Research</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" aria-label="Toggle colour theme">Theme</button>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero wrap">
+  <h1 class="intro" style="--i:0">Hi, I'm <span class="name">Saad</span>.<br>I build full-stack products.</h1>
+  <p class="lead intro" style="--i:1">Full-stack developer with over two years at DeshIT-BD, building multi-role ERP, CRM and HR platforms with NestJS, Next.js and Flutter. Based in Dhaka, Bangladesh.</p>
+  <div class="btns intro" style="--i:2">
+    <a class="btn primary" href="#projects">See my work</a>
+    <a class="btn" href="MD%20Saad%20Bin%20Sayed_CV.pdf" download>Download CV</a>
+    <a class="btn" href="https://github.com/saad125862" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://www.linkedin.com/in/md-saad-bin-sayed-758703384/" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>24</b><span>projects delivered</span></div>
+    <div class="stat"><b>2+ yrs</b><span>professional experience</span></div>
+    <div class="stat"><b>4</b><span>conference papers</span></div>
+    <div class="stat"><b>3</b><span>platforms: web, mobile, API</span></div>
+  </div>
+</section>
+
+<section id="projects" class="wrap">
+  <h2>Selected projects</h2>
+  <div class="grid">
+
+    <article class="card">
+      <h3>CommercePilot AI</h3>
+      <div class="when">Oct 2026</div>
+      <p>Facebook SaaS with a Messenger AI sales agent that takes customers from a comment to a confirmed order.</p>
+      <ul>
+        <li>LLM function calling for catalog, stock, shipping, order drafts and human handoff</li>
+        <li>HMAC-verified Meta webhooks, encrypted Page tokens, idempotent replays</li>
+        <li>Super-admin portal with plans, invoices, usage limits and audit logs; 11 test suites</li>
+      </ul>
+      <div class="chips"><span class="chip">Next.js</span><span class="chip">Express</span><span class="chip">MySQL/TiDB</span><span class="chip">LLM APIs</span></div>
+      <div class="actions" data-project="commercepilot"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+    </article>
+
+    <article class="card">
+      <h3>StitchFlow ERP</h3>
+      <div class="when">Sep 2026</div>
+      <p>Garments-manufacturing ERP covering orders, BOM, purchasing, inventory, cutting, sewing, QC, finance and maintenance.</p>
+      <ul>
+        <li>Multi-factory, 18 permission-based roles, two-level approvals, audit log</li>
+        <li>English and Bangla UI</li>
+        <li>170+ data models, 40+ API controllers, 100+ admin pages, Flutter app</li>
+      </ul>
+      <div class="chips"><span class="chip">NestJS</span><span class="chip">Next.js</span><span class="chip">Flutter</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span><span class="chip">Docker</span></div>
+      <div class="actions" data-project="stitchflow"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+    </article>
+
+    <article class="card">
+      <h3>Distributor ERP</h3>
+      <div class="when">Sep 2026</div>
+      <p>Multi-tenant ERP for distribution companies: sales, purchase, warehouse, fleet, HR and payroll, billing and a customer/vendor portal.</p>
+      <ul>
+        <li>Specified a 673-feature, 22-role system from a 694-screen prototype</li>
+        <li>Built phases 0 to 10 of a 13-phase roadmap across API, web and mobile</li>
+        <li>50+ data models, 70 web pages</li>
+      </ul>
+      <div class="chips"><span class="chip">NestJS</span><span class="chip">Next.js</span><span class="chip">Flutter</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span></div>
+      <div class="actions" data-project="distributor"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+    </article>
+
+    <article class="card">
+      <h3>Sales CRM (Lead Desk)</h3>
+      <div class="when">Aug – Sep 2026</div>
+      <p>Sales-performance CRM with a configurable lead pipeline, deals, tasks, follow-ups, targets and team analytics.</p>
+      <ul>
+        <li>Phone/WhatsApp call flow with post-call summary and recording playback</li>
+        <li>Clean-architecture Flutter app (38+ screens)</li>
+        <li>Next.js API with 46 routes, 68 use cases, JWT auth and OTP reset</li>
+      </ul>
+      <div class="chips"><span class="chip">Flutter</span><span class="chip">Riverpod</span><span class="chip">Next.js</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span></div>
+      <div class="actions" data-project="crm"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+    </article>
+
+    <article class="card">
+      <h3>HR Ascend</h3>
+      <div class="when">Jul – Sep 2026</div>
+      <p>HR and attendance platform for employees, managers and HR admins.</p>
+      <ul>
+        <li>Attendance and leave approvals, expense claims, device approval, digital ID, help desk</li>
+        <li>JWT access/refresh auth, Swagger docs, rate limiting, S3-compatible storage, PDF export</li>
+        <li>Next.js admin panel (80 pages) and Flutter mobile app</li>
+      </ul>
+      <div class="chips"><span class="chip">NestJS</span><span class="chip">Next.js</span><span class="chip">Flutter</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span></div>
+      <div class="actions" data-project="hrascend"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+    </article>
+
+    <article class="card">
+      <h3>Dokan ERP</h3>
+      <div class="when">Jul – Aug 2026</div>
+      <p>Shop-management ERP with barcoded products, batch pricing, sales and payments, stock movements and Excel import.</p>
+      <ul>
+        <li>Real-time updates with Socket.IO</li>
+        <li>Offline-first Flutter app that queues changes and syncs when the API is reachable</li>
+        <li>About 50 data models</li>
+      </ul>
+      <div class="chips"><span class="chip">Express</span><span class="chip">Next.js</span><span class="chip">Flutter</span><span class="chip">PostgreSQL</span><span class="chip">Socket.IO</span></div>
+      <div class="actions" data-project="dokan"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+    </article>
+
+  </div>
+</section>
+
+<section id="experience" class="wrap">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <div class="job">
+      <h3>Mid-Level Full-Stack Developer, DeshIT-BD</h3>
+      <div class="when">Jul 2026 – Oct 2026 · Remote, Dhaka</div>
+      <ul>
+        <li>Owned features from design to release across NestJS, Express, Next.js and Flutter products; reviewed junior developers' code.</li>
+        <li>Built ten end-to-end projects, including StitchFlow ERP, Distributor ERP, HR Ascend, Dokan ERP and a Sales CRM, using Claude Code as a core part of the workflow.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h3>Junior Full-Stack Developer, DeshIT-BD</h3>
+      <div class="when">Feb 2025 – Jul 2026</div>
+      <ul>
+        <li>Built eleven end-to-end projects with Node.js APIs, user interfaces and MySQL/PostgreSQL databases; wrote tested, documented code and took part in code reviews.</li>
+      </ul>
+    </div>
+    <div class="job">
+      <h3>AI-Integrated Full-Stack Developer Intern, DeshIT-BD</h3>
+      <div class="when">Oct 2024 – Jan 2025</div>
+      <ul>
+        <li>Delivered three end-to-end projects in just over three months, each with a NestJS backend, web app, Flutter Android app and QA testing.</li>
+        <li>Used Claude AI to speed up development, optimize backend APIs and prototype interfaces.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="wrap">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill"><h3>Backend, web and mobile</h3><div class="chips"><span class="chip">NestJS</span><span class="chip">Express</span><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">Flutter</span><span class="chip">Prisma</span><span class="chip">REST</span><span class="chip">OpenAPI</span><span class="chip">JWT</span><span class="chip">Socket.IO</span><span class="chip">Zod</span></div></div>
+    <div class="skill"><h3>Languages</h3><div class="chips"><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Dart</span><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C / C++</span><span class="chip">PHP</span></div></div>
+    <div class="skill"><h3>Databases</h3><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MySQL (TiDB)</span><span class="chip">MongoDB</span></div></div>
+    <div class="skill"><h3>DevOps and testing</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Render</span><span class="chip">Vercel</span><span class="chip">Neon</span><span class="chip">Jest</span><span class="chip">Git / GitHub</span></div></div>
+    <div class="skill"><h3>AI and LLM engineering</h3><div class="chips"><span class="chip">Claude Code</span><span class="chip">LLM function calling</span><span class="chip">OpenAI / Gemini / DeepSeek APIs</span><span class="chip">RAG</span><span class="chip">CrewAI</span><span class="chip">n8n</span><span class="chip">AI agents</span></div></div>
+    <div class="skill"><h3>ML and data science</h3><div class="chips"><span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">TensorFlow</span></div></div>
+  </div>
+</section>
+
+<section id="research" class="wrap">
+  <h2>Research and publications</h2>
+  <div class="pubs">
+    <div class="pub"><h3>Advancing Sentiment Analysis with BERT: A Comparative Evaluation Against Machine Learning and Deep Learning Techniques</h3><p>2026 IEEE 2nd International Conference on Secure IoT, Assured and Trusted Computing (SATC), March 2026</p></div>
+    <div class="pub"><h3>Defending Against Evasion Attacks in Adversarial Machine Learning: An Optimization Analysis and Framework</h3><p>4th International Conference on Computing and Machine Intelligence (ICMI 2025)</p></div>
+    <div class="pub"><h3>Leveraging Advanced AI for Real-Time Sign Language Detection and Translation</h3><p>1st IEEE Conference on Secure and Trustworthy CyberInfrastructure for IoT and Microelectronics (SaTC 2025)</p></div>
+    <div class="pub"><h3>Harnessing Technology for Climate Resilience: A New Paradigm in Urban Cooling through Eco-friendly Cooler</h3><p>5th International Conference on Environmental Science and Applications (ICESA 2024), Lisbon, Portugal</p></div>
+  </div>
+</section>
+
+<section id="education" class="wrap">
+  <h2>Education</h2>
+  <div class="edu">
+    <div><strong>B.Sc. in Computer Science and Engineering, North South University</strong><span>Fall 2025</span></div>
+    <div><strong>Higher Secondary Certificate, Birshreshtha Munshi Abdur Rouf Public College</strong><span>2019</span></div>
+    <div><strong>Secondary School Certificate, Government Laboratory High School</strong><span>2017</span></div>
+  </div>
+</section>
+
+<section id="contact" class="wrap contact">
+  <h2>Contact</h2>
+  <p>Open to full-stack roles and interesting projects. The quickest way to reach me is email.</p>
+  <div class="btns">
+    <a class="btn primary" href="mailto:saad125862@gmail.com">saad125862@gmail.com</a>
+    <a class="btn" href="tel:+8801998048911">+880 1998 048911</a>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">&copy; <span id="yr">2026</span> Md Saad Bin Sayed · Dhaka, Bangladesh</div></footer>
+
+<script>
+(function(){
+  var root=document.documentElement,btn=document.getElementById('theme');
+  try{var s=localStorage.getItem('theme');if(s)root.setAttribute('data-theme',s);}catch(e){}
+  btn.addEventListener('click',function(){
+    var dark=root.getAttribute('data-theme')==='dark'||(!root.getAttribute('data-theme')&&matchMedia('(prefers-color-scheme: dark)').matches);
+    var next=dark?'light':'dark';
+    root.setAttribute('data-theme',next);
+    try{localStorage.setItem('theme',next);}catch(e){}
+  });
+  /* Fill in the links below. Leave '' for any that don't exist yet: that button shows as disabled. */
+  var LINKS={
+    commercepilot:{web:'https://commercepilot-swart.vercel.app',app:'',code:''},
+    stitchflow:{web:'https://stitchflow-erp.vercel.app/',app:'',code:''},
+    distributor:{web:'https://distributor-erp.vercel.app/',app:'',code:''},
+    crm:{web:'https://tracking-rho-one.vercel.app/',app:'',code:''},
+    hrascend:{web:'https://hr-ascend-delta.vercel.app/',app:'',code:''},
+    dokan:{web:'',app:'',code:''}
+  };
+  document.querySelectorAll('.actions').forEach(function(box){
+    var cfg=LINKS[box.getAttribute('data-project')]||{};
+    box.querySelectorAll('a').forEach(function(a){
+      var url=cfg[a.getAttribute('data-kind')];
+      if(url){a.href=url;a.target='_blank';a.rel='noopener';}
+      else{a.classList.add('off');a.setAttribute('aria-disabled','true');a.title='Coming soon';}
+    });
+  });
+  /* ---------- motion ---------- */
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  root.classList.add('js');
+  var targets=document.querySelectorAll('section h2,.stat,.card,.job,.skill,.pub,.edu div,.contact p,.contact .btns,.timeline');
+  var seen={};
+  targets.forEach(function(el){
+    var p=el.parentElement;
+    seen[p.className+p.tagName]=(seen[p.className+p.tagName]||0)+1;
+    if(!el.classList.contains('timeline'))el.style.setProperty('--d',Math.min((seen[p.className+p.tagName]-1)*90,450)+'ms');
+    el.classList.add('reveal');
+  });
+  function countUp(el){
+    var b=el.querySelector('b');if(!b||b.dataset.done)return;b.dataset.done=1;
+    var m=b.textContent.match(/^(\d+)(.*)$/);if(!m||reduce)return;
+    var end=+m[1],t0=performance.now(),dur=1200;
+    (function tick(t){var k=Math.min((t-t0)/dur,1),e=1-Math.pow(1-k,3);b.textContent=Math.round(end*e)+m[2];if(k<1)requestAnimationFrame(tick);})(t0);
+  }
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');if(e.target.classList.contains('stat'))countUp(e.target);io.unobserve(e.target);}
+    });},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+    targets.forEach(function(el){io.observe(el);});
+    var links={};document.querySelectorAll('.nav nav a[href^="#"]').forEach(function(a){links[a.getAttribute('href').slice(1)]=a;});
+    var so=new IntersectionObserver(function(es){es.forEach(function(e){
+      if(e.isIntersecting){Object.keys(links).forEach(function(k){links[k].classList.toggle('active',k===e.target.id);});}
+    });},{rootMargin:'-40% 0px -55% 0px'});
+    document.querySelectorAll('main section[id]').forEach(function(s){so.observe(s);});
+  }else{targets.forEach(function(el){el.classList.add('in');});}
+  var bar=document.getElementById('progress');
+  function prog(){var h=document.documentElement;bar.style.transform='scaleX('+(h.scrollTop/(h.scrollHeight-h.clientHeight||1))+')';}
+  addEventListener('scroll',prog,{passive:true});prog();
+  document.getElementById('yr').textContent=new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
