@@ -165,7 +165,7 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
         <li>Super-admin portal with plans, invoices, usage limits and audit logs; 11 test suites</li>
       </ul>
       <div class="chips"><span class="chip">Next.js</span><span class="chip">Express</span><span class="chip">MySQL/TiDB</span><span class="chip">LLM APIs</span></div>
-      <div class="actions" data-project="commercepilot"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+      <div class="actions" data-project="commercepilot"><a data-kind="web">Web</a><a data-kind="app">App</a></div>
     </article>
 
     <article class="card">
@@ -178,7 +178,7 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
         <li>170+ data models, 40+ API controllers, 100+ admin pages, Flutter app</li>
       </ul>
       <div class="chips"><span class="chip">NestJS</span><span class="chip">Next.js</span><span class="chip">Flutter</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span><span class="chip">Docker</span></div>
-      <div class="actions" data-project="stitchflow"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+      <div class="actions" data-project="stitchflow"><a data-kind="web">Web</a><a data-kind="app">App</a></div>
     </article>
 
     <article class="card">
@@ -191,7 +191,7 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
         <li>50+ data models, 70 web pages</li>
       </ul>
       <div class="chips"><span class="chip">NestJS</span><span class="chip">Next.js</span><span class="chip">Flutter</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span></div>
-      <div class="actions" data-project="distributor"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+      <div class="actions" data-project="distributor"><a data-kind="web">Web</a><a data-kind="app">App</a></div>
     </article>
 
     <article class="card">
@@ -204,7 +204,7 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
         <li>Next.js API with 46 routes, 68 use cases, JWT auth and OTP reset</li>
       </ul>
       <div class="chips"><span class="chip">Flutter</span><span class="chip">Riverpod</span><span class="chip">Next.js</span><span class="chip">PostgreSQL</span><span class="chip">Prisma</span></div>
-      <div class="actions" data-project="crm"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+      <div class="actions" data-project="crm"><a data-kind="web">Web</a><a data-kind="app">App</a></div>
     </article>
 
     <article class="card">
@@ -217,7 +217,7 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
         <li>Next.js admin panel (80 pages) and Flutter mobile app</li>
       </ul>
       <div class="chips"><span class="chip">NestJS</span><span class="chip">Next.js</span><span class="chip">Flutter</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span></div>
-      <div class="actions" data-project="hrascend"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+      <div class="actions" data-project="hrascend"><a data-kind="web">Web</a><a data-kind="app">App</a></div>
     </article>
 
     <article class="card">
@@ -230,7 +230,7 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
         <li>About 50 data models</li>
       </ul>
       <div class="chips"><span class="chip">Express</span><span class="chip">Next.js</span><span class="chip">Flutter</span><span class="chip">PostgreSQL</span><span class="chip">Socket.IO</span></div>
-      <div class="actions" data-project="dokan"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
+      <div class="actions" data-project="dokan"><a data-kind="web">Web</a><a data-kind="app">App</a></div>
     </article>
 
   </div>
@@ -319,13 +319,14 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
     try{localStorage.setItem('theme',next);}catch(e){}
   });
   /* Fill in the links below. Leave '' for any that don't exist yet: that button shows as disabled. */
+  var REL='https://github.com/saad125862/portfolio/releases/download/v1.0.0/';
   var LINKS={
     commercepilot:{web:'https://commercepilot-swart.vercel.app',app:'',code:''},
-    stitchflow:{web:'https://stitchflow-erp.vercel.app/',app:'',code:''},
-    distributor:{web:'https://distributor-erp.vercel.app/',app:'',code:''},
-    crm:{web:'https://tracking-rho-one.vercel.app/',app:'',code:''},
-    hrascend:{web:'https://hr-ascend-delta.vercel.app/',app:'',code:''},
-    dokan:{web:'',app:'',code:''}
+    stitchflow:{web:'https://stitchflow-erp.vercel.app/',app:REL+'Stitchflow.apk',code:''},
+    distributor:{web:'https://distributor-erp.vercel.app/',app:REL+'distributor.apk',code:''},
+    crm:{web:'https://tracking-rho-one.vercel.app/',app:REL+'sales.apk',code:''},
+    hrascend:{web:'https://hr-ascend-delta.vercel.app/',app:REL+'HR.apk',code:''},
+    dokan:{web:'',app:REL+'Dokan.apk',code:''}
   };
   document.querySelectorAll('.actions').forEach(function(box){
     var cfg=LINKS[box.getAttribute('data-project')]||{};
