@@ -136,7 +136,7 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
 <main id="top">
 <section class="hero wrap">
   <h1 class="intro" style="--i:0">Hi, I'm <span class="name">Saad</span>.<br>I build full-stack products.</h1>
-  <p class="lead intro" style="--i:1">Full-stack developer with over two years at DeshIT-BD, building multi-role ERP, CRM and HR platforms with NestJS, Next.js and Flutter, plus Python/Django and Shopify integrations. Based in Dhaka, Bangladesh.</p>
+  <p class="lead intro" style="--i:1">Full-stack developer with over two years at DeshIT-BD, building multi-role ERP, CRM and HR platforms with NestJS, Next.js and Flutter, plus Laravel, Python/Django and Shopify integrations. Based in Dhaka, Bangladesh.</p>
   <div class="btns intro" style="--i:2">
     <a class="btn primary" href="#projects">See my work</a>
     <a class="btn" href="MD%20Saad%20Bin%20Sayed_CV.pdf" download>Download CV</a>
@@ -154,6 +154,19 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
 <section id="projects" class="wrap">
   <h2>Selected projects</h2>
   <div class="grid">
+
+    <article class="card">
+      <h3>EventPass</h3>
+      <div class="when">Nov 2026</div>
+      <p>Event ticketing platform where attendees book seats and get QR passes, and organizers sell tickets and check people in with a phone camera. Try it with the one-click demo login.</p>
+      <ul>
+        <li>Oversell-proof booking: row-level locking and idempotency keys, verified by a CI test that races 50 parallel buyers against PostgreSQL for 10 tickets</li>
+        <li>QR tickets with PDF export, atomic one-scan check-in and an HMAC-signed payment webhook</li>
+        <li>GitHub Actions pipeline (lint, static analysis, coverage gate, Trivy scan, container smoke test) that auto-deploys to Render and Neon only when checks pass</li>
+      </ul>
+      <div class="chips"><span class="chip">Laravel</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Tailwind CSS</span><span class="chip">Render</span><span class="chip">Neon</span></div>
+      <div class="actions" data-project="eventpass"><a data-kind="web">Web</a><a data-kind="code">Code</a></div>
+    </article>
 
     <article class="card">
       <h3>ShopSync</h3>
@@ -281,12 +294,12 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
 <section id="skills" class="wrap">
   <h2>Skills</h2>
   <div class="skills">
-    <div class="skill"><h3>Backend, web and mobile</h3><div class="chips"><span class="chip">NestJS</span><span class="chip">Express</span><span class="chip">Django</span><span class="chip">Django REST Framework</span><span class="chip">Celery</span><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Flutter</span><span class="chip">Vite</span><span class="chip">TanStack Query</span><span class="chip">Prisma</span><span class="chip">REST</span><span class="chip">OpenAPI</span><span class="chip">JWT</span><span class="chip">Socket.IO</span><span class="chip">Zod</span></div></div>
+    <div class="skill"><h3>Backend, web and mobile</h3><div class="chips"><span class="chip">NestJS</span><span class="chip">Express</span><span class="chip">Laravel</span><span class="chip">Django</span><span class="chip">Django REST Framework</span><span class="chip">Celery</span><span class="chip">Next.js</span><span class="chip">React</span><span class="chip">React Native</span><span class="chip">Expo</span><span class="chip">Flutter</span><span class="chip">Vite</span><span class="chip">TanStack Query</span><span class="chip">Prisma</span><span class="chip">REST</span><span class="chip">OpenAPI</span><span class="chip">JWT</span><span class="chip">Socket.IO</span><span class="chip">Zod</span></div></div>
     <div class="skill"><h3>E-commerce and integrations</h3><div class="chips"><span class="chip">Shopify apps</span><span class="chip">Shopify Admin GraphQL API</span><span class="chip">App Bridge</span><span class="chip">Polaris</span><span class="chip">OAuth 2.0</span><span class="chip">Webhooks (HMAC)</span><span class="chip">Idempotent event processing</span><span class="chip">Background jobs</span><span class="chip">Meta webhooks</span><span class="chip">REST APIs</span></div></div>
     <div class="skill"><h3>Business systems</h3><div class="chips"><span class="chip">ERP</span><span class="chip">CRM</span><span class="chip">HRM</span><span class="chip">Inventory management</span><span class="chip">Order management</span><span class="chip">Multi-tenant SaaS</span><span class="chip">Role-based access control</span><span class="chip">Audit logging</span></div></div>
     <div class="skill"><h3>Languages</h3><div class="chips"><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">Dart</span><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C / C++</span><span class="chip">PHP</span></div></div>
     <div class="skill"><h3>Databases</h3><div class="chips"><span class="chip">PostgreSQL</span><span class="chip">MySQL (TiDB)</span><span class="chip">MongoDB</span><span class="chip">Redis</span></div></div>
-    <div class="skill"><h3>DevOps and testing</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Docker Compose</span><span class="chip">GitHub Actions</span><span class="chip">Render</span><span class="chip">Vercel</span><span class="chip">Neon</span><span class="chip">Gunicorn</span><span class="chip">Jest</span><span class="chip">pytest</span><span class="chip">Vitest</span><span class="chip">Git / GitHub</span></div></div>
+    <div class="skill"><h3>DevOps and testing</h3><div class="chips"><span class="chip">Docker</span><span class="chip">Docker Compose</span><span class="chip">GitHub Actions</span><span class="chip">CI/CD pipelines</span><span class="chip">GHCR</span><span class="chip">Trivy</span><span class="chip">Render</span><span class="chip">Vercel</span><span class="chip">Neon</span><span class="chip">Gunicorn</span><span class="chip">Jest</span><span class="chip">PHPUnit</span><span class="chip">pytest</span><span class="chip">Vitest</span><span class="chip">Git / GitHub</span></div></div>
     <div class="skill"><h3>AI and LLM engineering</h3><div class="chips"><span class="chip">Claude Code</span><span class="chip">LLM function calling</span><span class="chip">OpenAI / Gemini / DeepSeek APIs</span><span class="chip">RAG</span><span class="chip">CrewAI</span><span class="chip">n8n</span><span class="chip">AI agents</span></div></div>
     <div class="skill"><h3>ML and data science</h3><div class="chips"><span class="chip">Scikit-learn</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">TensorFlow</span></div></div>
   </div>
@@ -336,6 +349,7 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
   /* Fill in the links below. Leave '' for any that don't exist yet: that button shows as disabled. */
   var REL='https://github.com/saad125862/portfolio/releases/download/v1.0.0/';
   var LINKS={
+    eventpass:{web:'https://eventpass-36j5.onrender.com',app:'',code:'https://github.com/saad125862/eventpass'},
     shopsync:{web:'https://shopsync-sooty.vercel.app',app:'https://github.com/saad125862/shopsync/releases/latest/download/ShopSync.apk',code:'https://github.com/saad125862/shopsync'},
     commercepilot:{web:'https://commercepilot-swart.vercel.app',app:'',code:''},
     stitchflow:{web:'https://stitchflow-erp.vercel.app/',app:REL+'Stitchflow.apk',code:''},
