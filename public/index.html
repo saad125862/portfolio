@@ -162,10 +162,11 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
       <ul>
         <li>Oversell-proof booking: row-level locking and idempotency keys, verified by a CI test that races 50 parallel buyers against PostgreSQL for 10 tickets</li>
         <li>QR tickets with PDF export, atomic one-scan check-in and an HMAC-signed payment webhook</li>
+        <li>Flutter Android app (QR ticket wallet and camera scanner) on a Laravel Sanctum token API</li>
         <li>GitHub Actions pipeline (lint, static analysis, coverage gate, Trivy scan, container smoke test) that auto-deploys to Render and Neon only when checks pass</li>
       </ul>
-      <div class="chips"><span class="chip">Laravel</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Tailwind CSS</span><span class="chip">Render</span><span class="chip">Neon</span></div>
-      <div class="actions" data-project="eventpass"><a data-kind="web">Web</a><a data-kind="code">Code</a></div>
+      <div class="chips"><span class="chip">Laravel</span><span class="chip">Flutter</span><span class="chip">PostgreSQL</span><span class="chip">Docker</span><span class="chip">GitHub Actions</span><span class="chip">Tailwind CSS</span><span class="chip">Render</span><span class="chip">Neon</span></div>
+      <div class="actions" data-project="eventpass"><a data-kind="web">Web</a><a data-kind="app">App</a><a data-kind="code">Code</a></div>
     </article>
 
     <article class="card">
@@ -349,7 +350,7 @@ h1 .name{background:linear-gradient(90deg,var(--accent),var(--text) 70%);-webkit
   /* Fill in the links below. Leave '' for any that don't exist yet: that button shows as disabled. */
   var REL='https://github.com/saad125862/portfolio/releases/download/v1.0.0/';
   var LINKS={
-    eventpass:{web:'https://eventpass-36j5.onrender.com',app:'',code:'https://github.com/saad125862/eventpass'},
+    eventpass:{web:'https://eventpass-36j5.onrender.com',app:'https://github.com/saad125862/eventpass/releases/latest/download/EventPass.apk',code:'https://github.com/saad125862/eventpass'},
     shopsync:{web:'https://shopsync-sooty.vercel.app',app:'https://github.com/saad125862/shopsync/releases/latest/download/ShopSync.apk',code:'https://github.com/saad125862/shopsync'},
     commercepilot:{web:'https://commercepilot-swart.vercel.app',app:'',code:''},
     stitchflow:{web:'https://stitchflow-erp.vercel.app/',app:REL+'Stitchflow.apk',code:''},
